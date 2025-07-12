@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AMPscript Playground - YourBlogName</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
-    textarea, pre { width: 100%; padding: 10px; font-size: 16px; }
-    textarea { height: 200px; margin-bottom: 10px; }
-    button { padding: 10px 20px; font-size: 16px; background-color: #0070d2; color: white; border: none; border-radius: 4px; }
-    pre { background: #333; color: #0f0; height: 200px; overflow: auto; }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Next-Gen AMPscript Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>AMPscript Playground</h1>
-  <textarea id="code">// Write AMPscript here</textarea>
-  <br>
-  <button onclick="runCode()">Run</button>
-  <h2>Output:</h2>
-  <pre id="output">// Output will appear here</pre>
+  <header>
+    <h1>Next-Gen SFMC | AMPscript Playground</h1>
+    <p>Write and simulate AMPscript instantly</p>
+  </header>
 
-  <script>
-    function runCode() {
-      const code = document.getElementById("code").value;
-      // Simulate AMPscript output - you can enhance this with regex rules later
-      const output = code.replace(/%%=v\((.*?)\)=%%/g, 'Simulated Output for $1');
-      document.getElementById("output").innerText = output;
-    }
-  </script>
+  <main>
+    <label for="snippet">Insert AMPscript Example:</label>
+    <select id="snippet" onchange="loadSnippet()">
+      <option value="">-- Choose a snippet --</option>
+      <option value="personalization">Personalization</option>
+      <option value="ifElse">If/Else</option>
+      <option value="dateFormat">Date Formatting</option>
+      <option value="loop">FOR Loop</option>
+      <option value="emailAttr">Retrieve Email</option>
+      <option value="lookup">Lookup from Data Extension</option>
+      <option value="uppercase">Uppercase</option>
+    </select>
+    <br><br>
+
+    <textarea id="code">// Write your AMPscript here...</textarea>
+    <button onclick="runCode()">Run</button>
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <h2>Simulated Output:</h2>
+    <pre id="output">// Output will appear here</pre>
+  </main>
+
+  <footer>
+    <p>🚀 Built by Next-Gen SFMC Team | <a href="https://nextgensfmc.blogspot.com">Back to Blog</a></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

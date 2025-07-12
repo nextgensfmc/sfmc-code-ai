@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AMPscript Playground - YourBlogName</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    textarea, pre { width: 100%; padding: 10px; font-size: 16px; }
+    textarea { height: 200px; margin-bottom: 10px; }
+    button { padding: 10px 20px; font-size: 16px; background-color: #0070d2; color: white; border: none; border-radius: 4px; }
+    pre { background: #333; color: #0f0; height: 200px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>AMPscript Playground</h1>
+  <textarea id="code">// Write AMPscript here</textarea>
+  <br>
+  <button onclick="runCode()">Run</button>
+  <h2>Output:</h2>
+  <pre id="output">// Output will appear here</pre>
+
+  <script>
+    function runCode() {
+      const code = document.getElementById("code").value;
+      // Simulate AMPscript output - you can enhance this with regex rules later
+      const output = code.replace(/%%=v\((.*?)\)=%%/g, 'Simulated Output for $1');
+      document.getElementById("output").innerText = output;
+    }
+  </script>
+</body>
+</html>
